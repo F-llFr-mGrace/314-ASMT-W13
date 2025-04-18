@@ -32881,7 +32881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userInputText: {fileID: 1995925610}
-  lockText: {fileID: 954383863}
   comboButtons:
   - {fileID: 512199272}
   - {fileID: 1768742112}
@@ -32893,12 +32892,18 @@ MonoBehaviour:
   - {fileID: 1779629894}
   - {fileID: 1624181486}
   - {fileID: 704503772}
+  infoText: {fileID: 1558094534}
   lockedPanel: {fileID: 1696348146}
+  unlockedColor: {r: 0.23760104, g: 1, b: 0, a: 0}
+  lockedColor: {r: 1, g: 0, b: 0, a: 0}
+  lockedText: {fileID: 954383863}
   isLocked: 0
-  passcode: 1345
-  ComboLockButtonPressedClip: {fileID: 8300000, guid: 256bdb10da09c744f86381dce72934e6, type: 3}
-  ComboLockLockedClip: {fileID: 8300000, guid: a7d20e9f23bd7cc449823e482e098902, type: 3}
-  ComboLockUnlockedClip: {fileID: 8300000, guid: dff3014fa4e23374685962fafb39949f, type: 3}
+  isResettable: 0
+  comboValues: 010000000200000004000000
+  inputValues: 
+  lockComboClip: {fileID: 8300000, guid: 79f0548b92e2b2c48a00514b4f9aa04a, type: 3}
+  unlockComboClip: {fileID: 8300000, guid: dff3014fa4e23374685962fafb39949f, type: 3}
+  comboButtonPressedClip: {fileID: 8300000, guid: 256bdb10da09c744f86381dce72934e6, type: 3}
 --- !u!1 &1308209776
 GameObject:
   m_ObjectHideFlags: 0
@@ -53679,6 +53684,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559059fd0f27d26449c6a85c1ab00117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressControl: {fileID: 0}
+  progressSound: {fileID: 0}
+  startGameClip: {fileID: 0}
+  challengeCompleteClip: {fileID: 0}
   grabInteractables: []
   grabSound: {fileID: 1335380326}
   grabClip: {fileID: 8300000, guid: a7d20e9f23bd7cc449823e482e098902, type: 3}
@@ -53687,27 +53696,14 @@ MonoBehaviour:
   grabActivatedClip: {fileID: 8300000, guid: a7d20e9f23bd7cc449823e482e098902, type: 3}
   wandActivatedClip: {fileID: 8300000, guid: 79f0548b92e2b2c48a00514b4f9aa04a, type: 3}
   drawer: {fileID: 8884346408297993648}
-  drawerSocket: {fileID: 0}
-  drawerSound: {fileID: 0}
-  drawerSocketSound: {fileID: 0}
-  drawerMoveClip: {fileID: 0}
-  drawerSocketClip: {fileID: 0}
   cabinetDoors:
   - {fileID: 7336642526581524254}
   - {fileID: 6003112905920721514}
-  cabinetDoorSound: []
-  cabinetDoorMoveClip: {fileID: 0}
-  combinationLock: {fileID: 1297717877}
-  combinationLockSound: {fileID: 0}
-  ComboLockButtonPressedClip: {fileID: 0}
-  ComboLockLockedClip: {fileID: 0}
-  ComboLockUnlockedClip: {fileID: 0}
+  comboLock: {fileID: 0}
   wall: {fileID: 1198122166}
-  wallSocket: {fileID: 0}
   wallSound: {fileID: 0}
-  wallSocketSound: {fileID: 0}
-  destroyWallClip: {fileID: 0}
-  wallSocketClip: {fileID: 0}
+  backgroundMusic: {fileID: 0}
+  backgroundMusicClip: {fileID: 0}
   fallBackClip: {fileID: 0}
 --- !u!1 &2040172831
 GameObject:

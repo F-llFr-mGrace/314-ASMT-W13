@@ -9,13 +9,13 @@ public class SimpleUIControl : MonoBehaviour
 {
     [SerializeField] ProgressControl progressControl;
     [SerializeField] TMP_Text[] msgTexts;
-
-    private void OnEnable()
+    
+    void OnEnable()
     {
-        if (progressControl != null)
+        if(progressControl != null)
         {
             progressControl.OnStartGame.AddListener(StartGame);
-            progressControl.OnChallengeComplete.AddListener(ChallengeComplete); 
+            progressControl.OnChallengeComplete.AddListener(ChallengeComplete);
         }
     }
 
