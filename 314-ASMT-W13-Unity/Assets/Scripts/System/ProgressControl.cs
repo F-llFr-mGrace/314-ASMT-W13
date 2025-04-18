@@ -65,12 +65,18 @@ public class ProgressControl : MonoBehaviour
     {
         if(drawer != null)
         {
+            drawer.OnDrawerDetach.AddListener(OnDrawerDetach);
             drawerSocket  = drawer.GetKeySocket;
             if(drawerSocket != null)
             {
                 drawerSocket.selectEntered.AddListener(OnDrawerSocketed);
             }
         }
+    }
+
+    private void OnDrawerDetach()
+    {
+        ChallengeComplete();
     }
 
     private void OnDrawerSocketed(SelectEnterEventArgs arg0)
