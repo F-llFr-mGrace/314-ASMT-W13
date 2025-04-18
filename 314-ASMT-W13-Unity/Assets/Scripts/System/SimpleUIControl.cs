@@ -3,42 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
+using System;
 
 public class SimpleUIControl : MonoBehaviour
 {
-    [SerializeField] XrButtonInteractable startButton;
-
-    [SerializeField] string[] msgStrings;
-
+    [SerializeField] ProgressControl progressControl;
     [SerializeField] TMP_Text[] msgTexts;
 
-    [SerializeField] GameObject KeyIndicatorLight;
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        if (startButton != null)
+        if (progressControl != null)
         {
-            startButton.selectEntered.AddListener(StartButtonPressed);
+            progressControl.OnStartGame.AddListener(StartGame);
+            progressControl.OnChallengeComplete.AddListener(ChallengeComplete); 
         }
     }
 
-    private void StartButtonPressed(SelectEnterEventArgs arg0)
+    private void ChallengeComplete(string arg0)
     {
-        SetText(msgStrings[1]);
-        if (KeyIndicatorLight != null)
-        {
-            KeyIndicatorLight.SetActive(true);
-        }
+        SetText(arg0);
     }
 
-    // Update is called once per frame
+    private void StartGame(string arg0)
+    {
+        SetText(arg0);
+    }
+
     public void SetText(string msg)
     {
         for (int i = 0; i < msgTexts.Length; i++)
         {
             msgTexts[i].text = msg;
         }
-        
     }
 }
